@@ -31,6 +31,17 @@ export class QuizzesController {
     return this.quizzesService.getQuizWithQuestions(+id);
   }
 
+  @Get(':id/questions')
+  @ApiOperation({ summary: 'Get quiz questions' })
+  @ApiResponse({ status: 200, description: 'Quiz questions retrieved successfully' })
+  async getQuizQuestions(@Param('id') id: string) {
+    const quiz = await this.quizzesService.getQuizWithQuestions(+id);
+    if (!quiz) {
+      throw new Error('Quiz not found');
+    }
+    return quiz.questions;
+  }
+
   @Post(':id/submit')
   @ApiOperation({ summary: 'Submit quiz answers' })
   @ApiResponse({ status: 201, description: 'Quiz submitted successfully' })
