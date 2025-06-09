@@ -835,22 +835,6 @@ chore: maintenance tasks
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- **NestJS Team**: For the amazing framework
-- **TypeORM**: For excellent ORM support
-- **PostgreSQL**: For robust database management
-- **Community Contributors**: For continuous improvements
-
-## 📞 Support
-
-For support and questions:
-
-- **Email**: support@lms-backend.com
-- **Issues**: [GitHub Issues](https://github.com/your-repo/LMS_Nestjs/issues)
-- **Documentation**: [API Docs](http://localhost:3000/api/docs)
-
----
 
 **Built with ❤️ using NestJS, TypeScript, and PostgreSQL**
 
