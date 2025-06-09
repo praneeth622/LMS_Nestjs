@@ -6,7 +6,7 @@ export class CreateQuizQuestionDto {
   @IsNumber()
   quiz_id: number;
 
-  @ApiProperty({ example: 'What is HTML?' })
+  @ApiProperty({ example: 'What does HTML stand for?' })
   @IsString()
   question_text: string;
 

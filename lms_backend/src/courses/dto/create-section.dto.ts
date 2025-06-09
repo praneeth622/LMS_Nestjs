@@ -6,7 +6,7 @@ export class CreateSectionDto {
   @IsNumber()
   course_id: number;
 
-  @ApiProperty({ example: 'Getting Started' })
+  @ApiProperty({ example: 'Introduction to HTML' })
   @IsString()
   title: string;
 
