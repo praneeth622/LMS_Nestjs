@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { AppModule } from './app.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
@@ -47,9 +48,14 @@ async function bootstrap() {
     .build();
   
   const document = SwaggerModule.createDocument(app, config);
+  app.getHttpAdapter().get('/api/docs/api-json', (req: Request, res: Response) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(document);
+  });
   SwaggerModule.setup('api/docs', app, document, {
     swaggerOptions: {
       persistAuthorization: true,
+      jsonDocumentUrl: 'api-json',
     },
   });
 
