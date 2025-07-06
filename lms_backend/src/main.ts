@@ -11,9 +11,9 @@ async function bootstrap() {
   // Global prefix
   app.setGlobalPrefix('api');
   
-  // Enable CORS
+  // Enable CORS - Allow all origins
   app.enableCors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: true,
     credentials: true,
   });
   
